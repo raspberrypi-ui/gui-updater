@@ -1,0 +1,159 @@
+# English translations for gui-updater package.
+# Copyright (C) 2021 Raspberry Pi Ltd
+# This file is distributed under the same license as the gui-updater package.
+# Simon Long <simon@raspberrypi.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gui_updater 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-03 11:46+0100\n"
+"PO-Revision-Date: 2021-09-12 14:15+0100\n"
+"Last-Translator: Avag Sayan <info@armath.am\n"
+"Language-Team: Armenian (hy) <(nothing)>\n"
+"Language: hy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/installer.c:148
+msgid "Reboot"
+msgstr "Վերագործարկել"
+
+#: ../src/installer.c:149
+msgid "Later"
+msgstr "Ավելի ուշ"
+
+#: ../src/installer.c:224 ../src/installer.c:235
+#, c-format
+msgid "Error %s - %s"
+msgstr "Սխալ %s - %s"
+
+#: ../src/installer.c:261 ../src/installer.c:320
+msgid "Comparing versions - please wait..."
+msgstr "Տարբերակների համեմատում - խնդրում ենք սպասել..."
+
+#: ../src/installer.c:267 ../src/installer.c:366
+#, fuzzy
+msgid "Downloading updates - please wait..."
+msgstr "Տեղադրումների թարմացում - խնդրում ենք սպասել..."
+
+#: ../src/installer.c:269
+msgid "Installing updates - please wait..."
+msgstr "Տեղադրումների թարմացում - խնդրում ենք սպասել..."
+
+#: ../src/installer.c:297
+msgid "Could not sync time - exiting"
+msgstr ""
+
+#: ../src/installer.c:308
+msgid "Updating package data - please wait..."
+msgstr "Փաթեթների տվյալների թարմացում - խնդրում ենք սպասել..."
+
+#: ../src/installer.c:318
+msgid "updating cache"
+msgstr "քեշերի թարմացում"
+
+#: ../src/installer.c:355
+msgid "comparing versions"
+msgstr "տարբերակների համեմատում"
+
+#: ../src/installer.c:374 ../src/installer.c:388
+msgid "System is up to date"
+msgstr "Համակարգը թարմ է"
+
+#: ../src/installer.c:384
+msgid "installing packages"
+msgstr "Փաթեթների տեղադրում"
+
+#: ../src/installer.c:391
+msgid ""
+"System is up to date.\n"
+"A reboot is required to complete the install. Reboot now or later?"
+msgstr ""
+"Համակարգը թարմ է.\n"
+"Տեղադրումներն ավարտելու համար անհրաժեշտ է վերագործարկում։ Վերագործարկել "
+"հիմա՞, թե հետո"
+
+#: ../src/installer.c:436
+#, fuzzy
+msgid "No network connection - exiting"
+msgstr "Ցանցը առկա չէ - հնարավոր չէ տեղադրել թարմացումները։"
+
+#: ../src/installer.c:440
+#, fuzzy
+msgid "Synchronising clock - please wait..."
+msgstr "%s փաթեթներ - խնդրում ենք սպասել..."
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#: ../data/gui-updater.ui.h:1
+msgid "label"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:2
+msgid "_Cancel"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:3
+msgid "_OK"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:4
+#, fuzzy
+msgid "Installing updates..."
+msgstr "Տեղադրել թարմացումները"
+
+#~ msgid ""
+#~ "Updates are available\n"
+#~ "Click the update icon to install"
+#~ msgstr ""
+#~ "Հասանելի է թարմացումներ\n"
+#~ "Տեղադրելու համար սեղմեք թարմացման պատկերի վրա"
+
+#~ msgid ""
+#~ "Clock not synchronised - cannot install updates. Try again in a few "
+#~ "minutes."
+#~ msgstr ""
+#~ "Ժամանակը համաժամեցված չէ - հնարավոր չէ տեղադրել թարմացումները։ Մի քանի "
+#~ "րոպե հետո նորից փորձեք։"
+
+#~ msgid "Show Updates..."
+#~ msgstr "Ցուցադրել թարմացումները..."
+
+#~ msgid "Updates are available - click to install"
+#~ msgstr "Թարմացումները հասանելի են - սեղմեք տեղադրելու համար"
+
+#~ msgid "Updater"
+#~ msgstr "Թարմացումների գործիք"
+
+#~ msgid "Hours between checks for updates"
+#~ msgstr "Թարմացումների ստուգումների միջև ընկած ժամամանակ"
+
+#~ msgid "Checks for updates"
+#~ msgstr "Ստուգել թարմացումները"
+
+#~ msgid "Checking package details - please wait..."
+#~ msgstr "Փաթեթների դետալների թարմացում - խնդրում ենք սպասել..."
+
+#~ msgid "Installing"
+#~ msgstr "Տեղադրում"
+
+#~ msgid "Downloading"
+#~ msgstr "Ներբեռնում"
+
+#~ msgid "Password Required"
+#~ msgstr "Պահանջում է գաղտնաբառ"
+
+#~ msgid "Available Updates"
+#~ msgstr "Հասանելի թարմացումներ"
+
+#~ msgid "Close"
+#~ msgstr "Փակել"
+
+#~ msgid "Install"
+#~ msgstr "Տեղադրել"
+
+#~ msgid "The following packages can be updated :"
+#~ msgstr "Հետևյալ փաթեթները կարող են թարմանալ՝ "

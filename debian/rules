@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh ${@} --parallel --with autoreconf

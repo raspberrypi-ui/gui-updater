@@ -1,0 +1,160 @@
+# Italian translations for gui-updater package.
+# Copyright (C) 2021 Raspberry Pi Ltd
+# This file is distributed under the same license as the gui-updater package.
+# Emanuele Goldoni <emanuele.goldoni@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gui-updater\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-03 11:46+0100\n"
+"PO-Revision-Date: 2021-11-10 12:12+0100\n"
+"Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/installer.c:148
+msgid "Reboot"
+msgstr "Riavvia ora"
+
+#: ../src/installer.c:149
+msgid "Later"
+msgstr "Più tardi"
+
+#: ../src/installer.c:224 ../src/installer.c:235
+#, c-format
+msgid "Error %s - %s"
+msgstr "Errore %s: %s"
+
+#: ../src/installer.c:261 ../src/installer.c:320
+msgid "Comparing versions - please wait..."
+msgstr "Confronto tra le versioni..."
+
+#: ../src/installer.c:267 ../src/installer.c:366
+#, fuzzy
+msgid "Downloading updates - please wait..."
+msgstr "Installazione degli aggiornamenti..."
+
+#: ../src/installer.c:269
+msgid "Installing updates - please wait..."
+msgstr "Installazione degli aggiornamenti..."
+
+#: ../src/installer.c:297
+msgid "Could not sync time - exiting"
+msgstr ""
+
+#: ../src/installer.c:308
+msgid "Updating package data - please wait..."
+msgstr "Aggiornamento dei dati del pacchetto..."
+
+#: ../src/installer.c:318
+msgid "updating cache"
+msgstr "aggiornando la cache"
+
+#: ../src/installer.c:355
+msgid "comparing versions"
+msgstr "confrontando le versioni"
+
+#: ../src/installer.c:374 ../src/installer.c:388
+msgid "System is up to date"
+msgstr "Il sistema è aggiornato"
+
+#: ../src/installer.c:384
+msgid "installing packages"
+msgstr "installando i pacchetti"
+
+#: ../src/installer.c:391
+msgid ""
+"System is up to date.\n"
+"A reboot is required to complete the install. Reboot now or later?"
+msgstr ""
+"Il sistema è aggiornato.\n"
+"E' richiesto un riavvio per completare l'installazione. Riavviare ora o più "
+"tardi?"
+
+#: ../src/installer.c:436
+#, fuzzy
+msgid "No network connection - exiting"
+msgstr "Nessuna connessione di rete: impossibile installare gli aggiornamenti."
+
+#: ../src/installer.c:440
+#, fuzzy
+msgid "Synchronising clock - please wait..."
+msgstr "%s dei pacchetti..."
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#: ../data/gui-updater.ui.h:1
+msgid "label"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:2
+msgid "_Cancel"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:3
+msgid "_OK"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:4
+#, fuzzy
+msgid "Installing updates..."
+msgstr "Installa gli aggiornamenti"
+
+#~ msgid ""
+#~ "Updates are available\n"
+#~ "Click the update icon to install"
+#~ msgstr ""
+#~ "Ci sono aggiornamenti disponibili\n"
+#~ "Fare clic sull'icona degli aggiornamenti per installarli"
+
+#~ msgid ""
+#~ "Clock not synchronised - cannot install updates. Try again in a few "
+#~ "minutes."
+#~ msgstr ""
+#~ "Orologio non sincronizzato: impossibile installare gli aggiornamenti. "
+#~ "Provare nuovamente tra alcuni minuti."
+
+#~ msgid "Show Updates..."
+#~ msgstr "Mostra gli aggiornamenti..."
+
+#~ msgid "Updates are available - click to install"
+#~ msgstr "Ci sono aggiornamenti disponibili - fare clic per installare"
+
+#~ msgid "Updater"
+#~ msgstr "Aggiornamenti"
+
+#~ msgid "Hours between checks for updates"
+#~ msgstr "Intervallo (in ore) tra i controlli per gli aggiornamenti"
+
+#~ msgid "Checks for updates"
+#~ msgstr "Verifica la disponibilità di aggiornamenti"
+
+#~ msgid "Checking package details - please wait..."
+#~ msgstr "Verifica dei dettagli del pacchetto..."
+
+#~ msgid "Installing"
+#~ msgstr "Installazione"
+
+#~ msgid "Downloading"
+#~ msgstr "Scaricamento"
+
+#~ msgid "Password Required"
+#~ msgstr "Password necessaria"
+
+#~ msgid "Available Updates"
+#~ msgstr "Aggiornamenti disponibili"
+
+#~ msgid "Close"
+#~ msgstr "Chiudi"
+
+#~ msgid "Install"
+#~ msgstr "Installa"
+
+#~ msgid "The following packages can be updated :"
+#~ msgstr "I seguenti pacchetti possono essere aggiornati:"

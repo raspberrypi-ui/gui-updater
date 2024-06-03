@@ -1,0 +1,101 @@
+# English translations for gui-updater package.
+# Copyright (C) 2024 Raspberry Pi Ltd
+# This file is distributed under the same license as the gui-updater package.
+# Simon Long <simon@raspberrypi.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gui_updater 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-03 11:46+0100\n"
+"PO-Revision-Date: 2021-09-12 14:15+0100\n"
+"Last-Translator: Simon Long <simon@raspberrypi.com>\n"
+"Language-Team: English (British) <(nothing)>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/installer.c:148
+msgid "Reboot"
+msgstr "Reboot"
+
+#: ../src/installer.c:149
+msgid "Later"
+msgstr "Later"
+
+#: ../src/installer.c:224 ../src/installer.c:235
+#, c-format
+msgid "Error %s - %s"
+msgstr "Error %s - %s"
+
+#: ../src/installer.c:261 ../src/installer.c:320
+msgid "Comparing versions - please wait..."
+msgstr "Comparing versions - please wait..."
+
+#: ../src/installer.c:267 ../src/installer.c:366
+msgid "Downloading updates - please wait..."
+msgstr "Downloading updates - please wait..."
+
+#: ../src/installer.c:269
+msgid "Installing updates - please wait..."
+msgstr "Installing updates - please wait..."
+
+#: ../src/installer.c:297
+msgid "Could not sync time - exiting"
+msgstr ""
+
+#: ../src/installer.c:308
+msgid "Updating package data - please wait..."
+msgstr "Updating package data - please wait..."
+
+#: ../src/installer.c:318
+msgid "updating cache"
+msgstr "updating cache"
+
+#: ../src/installer.c:355
+msgid "comparing versions"
+msgstr "comparing versions"
+
+#: ../src/installer.c:374 ../src/installer.c:388
+msgid "System is up to date"
+msgstr "System is up to date"
+
+#: ../src/installer.c:384
+msgid "installing packages"
+msgstr "installing packages"
+
+#: ../src/installer.c:391
+msgid ""
+"System is up to date.\n"
+"A reboot is required to complete the install. Reboot now or later?"
+msgstr ""
+"System is up to date.\n"
+"A reboot is required to complete the install. Reboot now or later?"
+
+#: ../src/installer.c:436
+msgid "No network connection - exiting"
+msgstr "No network connection - exiting"
+
+#: ../src/installer.c:440
+msgid "Synchronising clock - please wait..."
+msgstr "Synchronising clock - please wait..."
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#: ../data/gui-updater.ui.h:1
+msgid "label"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:2
+msgid "_Cancel"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:3
+msgid "_OK"
+msgstr ""
+
+#: ../data/gui-updater.ui.h:4
+msgid "Installing updates..."
+msgstr "Installing updates...s"

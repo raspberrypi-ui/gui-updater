@@ -1,0 +1,5 @@
+gui-updater (0.1) bookworm; urgency=medium
+
+  * Initial release.
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 03 Jun 2024 11:44:14 +0100
