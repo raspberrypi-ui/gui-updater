@@ -1,2 +1,2 @@
 #!/usr/bin/dh-exec
-data/10-gui-updater.rules => /etc/polkit-1/rules.d/10-gui-updater.rules
+data/10-gui-updater.rules => /usr/share/polkit-1/rules.d/10-gui-updater.rules
