@@ -75,7 +75,6 @@ static gboolean refresh_cache (gpointer data);
 static void compare_versions (PkTask *task, GAsyncResult *res, gpointer data);
 static void start_install (PkTask *task, GAsyncResult *res, gpointer data);
 static void install_done (PkTask *task, GAsyncResult *res, gpointer data);
-static gboolean close_end (gpointer data);
 
 /*----------------------------------------------------------------------------*/
 /* Helper functions for system status                                         */
@@ -183,6 +182,7 @@ static gboolean quit (GtkButton *button, gpointer data)
         else
             system ("lxpanelctl command updater check");
     }
+
     if (msg_dlg)
     {
         gtk_widget_destroy (GTK_WIDGET (msg_dlg));
@@ -369,11 +369,7 @@ static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
         pk_task_update_packages_async (task, ids, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) install_done, NULL);
         g_strfreev (ids);
     }
-    else
-    {
-        message (_("System is up to date"), MSG_PROMPT);
-        g_timeout_add_seconds (2, close_end, NULL);
-    }
+    else message (_("System is up to date"), MSG_PROMPT);
 
     if (sack) g_object_unref (sack);
     g_object_unref (fsack);
@@ -384,27 +380,9 @@ static void install_done (PkTask *task, GAsyncResult *res, gpointer data)
     if (!error_handler (task, res, _("installing packages"))) return;
 
     if (access ("/run/reboot-required", F_OK))
-    {
         message (_("System is up to date"), MSG_PROMPT);
-        g_timeout_add_seconds (2, close_end, NULL);
-    }
-    else message (_("System is up to date.\nA reboot is required to complete the install. Reboot now or later?"), MSG_REBOOT);
-}
-
-static gboolean close_end (gpointer data)
-{
-    if (wayland)
-        system ("wfpanelctl updater check");
     else
-        system ("lxpanelctl command updater check");
-    if (msg_dlg)
-    {
-        gtk_widget_destroy (GTK_WIDGET (msg_dlg));
-        msg_dlg = NULL;
-    }
-
-    gtk_main_quit ();
-    return FALSE;
+        message (_("System is up to date.\nA reboot is required to complete the install. Reboot now or later?"), MSG_REBOOT);
 }
 
 
