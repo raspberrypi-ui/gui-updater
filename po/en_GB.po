@@ -98,4 +98,4 @@ msgstr ""
 
 #: ../data/gui-updater.ui.h:4
 msgid "Installing updates..."
-msgstr "Installing updates...s"
+msgstr "Installing updates..."
