@@ -1,3 +1,9 @@
+gui-updater (0.3) bookworm; urgency=medium
+
+  * Add shadows
+
+ -- Simon Long <simon@raspberrypi.com>  Wed, 18 Sep 2024 14:49:50 +0100
+
 gui-updater (0.2) bookworm; urgency=medium
 
   * Correct typo.
