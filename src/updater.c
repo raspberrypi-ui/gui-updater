@@ -369,7 +369,11 @@ static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
         pk_task_update_packages_async (task, ids, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) install_done, NULL);
         g_strfreev (ids);
     }
-    else message (_("System is up to date"), MSG_PROMPT);
+    else
+    {
+        gtk_window_set_title (GTK_WINDOW (msg_dlg), _("Install complete"));
+        message (_("System is up to date"), MSG_PROMPT);
+    }
 
     if (sack) g_object_unref (sack);
     g_object_unref (fsack);
@@ -378,6 +382,7 @@ static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
 static void install_done (PkTask *task, GAsyncResult *res, gpointer data)
 {
     if (!error_handler (task, res, _("installing packages"))) return;
+    gtk_window_set_title (GTK_WINDOW (msg_dlg), _("Install complete"));
 
     if (access ("/run/reboot-required", F_OK))
         message (_("System is up to date"), MSG_PROMPT);
