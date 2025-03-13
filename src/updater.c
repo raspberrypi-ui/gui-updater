@@ -69,11 +69,11 @@ static void resync (void);
 static void message (char *msg, int type);
 static gboolean quit (GtkButton *button, gpointer data);
 static gboolean reboot (GtkButton *button, gpointer data);
-static PkResults *error_handler (PkTask *task, GAsyncResult *res, char *desc);
+static PkResults *error_handler (PkTask *task, PkClient *client, GAsyncResult *res, char *desc);
 static void progress (PkProgress *progress, PkProgressType type, gpointer data);
 static gboolean refresh_cache (gpointer data);
-static void compare_versions (PkTask *task, GAsyncResult *res, gpointer data);
-static void start_install (PkTask *task, GAsyncResult *res, gpointer data);
+static void compare_versions (PkClient *client, GAsyncResult *res, gpointer data);
+static void start_install (PkClient *client, GAsyncResult *res, gpointer data);
 static void install_done (PkTask *task, GAsyncResult *res, gpointer data);
 
 /*----------------------------------------------------------------------------*/
@@ -210,14 +210,15 @@ static gboolean reboot (GtkButton *button, gpointer data)
 /* Helper functions for async operations                                      */
 /*----------------------------------------------------------------------------*/
 
-static PkResults *error_handler (PkTask *task, GAsyncResult *res, char *desc)
+static PkResults *error_handler (PkTask *task, PkClient *client, GAsyncResult *res, char *desc)
 {
     PkResults *results;
     PkError *pkerror;
     GError *error = NULL;
     gchar *buf;
 
-    results = pk_task_generic_finish (task, res, &error);
+    if (task) results = pk_task_generic_finish (task, res, &error);
+    else results = pk_client_generic_finish (client, res, &error);
     if (error != NULL)
     {
         success = FALSE;
@@ -313,13 +314,13 @@ static gboolean refresh_cache (gpointer data)
     return FALSE;
 }
 
-static void compare_versions (PkTask *task, GAsyncResult *res, gpointer data)
+static void compare_versions (PkClient *client, GAsyncResult *res, gpointer data)
 {
-    if (!error_handler (task, res, _("updating cache"))) return;
+    if (!error_handler (NULL, client, res, _("updating cache"))) return;
 
     message (_("Comparing versions - please wait..."), MSG_PULSE);
 
-    pk_client_get_updates_async (PK_CLIENT (task), PK_FILTER_ENUM_NONE, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) start_install, data);
+    pk_client_get_updates_async (client, PK_FILTER_ENUM_NONE, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) start_install, data);
 }
 
 static gboolean filter_fn (PkPackage *package, gpointer user_data)
@@ -347,12 +348,12 @@ static gboolean filter_fn_x86 (PkPackage *package, gpointer user_data)
     return filter_fn (package, NULL);
 }
 
-static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
+static void start_install (PkClient *client, GAsyncResult *res, gpointer data)
 {
     PkPackageSack *sack = NULL, *fsack;
     gchar **ids;
 
-    PkResults *results = error_handler (task, res, _("comparing versions"));
+    PkResults *results = error_handler (NULL, client, res, _("comparing versions"));
     if (!results) return;
 
     sack = pk_results_get_package_sack (results);
@@ -366,7 +367,7 @@ static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
         message (_("Downloading updates - please wait..."), MSG_PULSE);
 
         ids = pk_package_sack_get_ids (fsack);
-        pk_task_update_packages_async (task, ids, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) install_done, NULL);
+        pk_task_update_packages_async (PK_TASK (client), ids, NULL, (PkProgressCallback) progress, NULL, (GAsyncReadyCallback) install_done, NULL);
         g_strfreev (ids);
     }
     else
@@ -381,7 +382,7 @@ static void start_install (PkTask *task, GAsyncResult *res, gpointer data)
 
 static void install_done (PkTask *task, GAsyncResult *res, gpointer data)
 {
-    if (!error_handler (task, res, _("installing packages"))) return;
+    if (!error_handler (task, NULL, res, _("installing packages"))) return;
     gtk_window_set_title (GTK_WINDOW (msg_dlg), _("Install complete"));
 
     if (access ("/run/reboot-required", F_OK))
