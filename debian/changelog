@@ -1,3 +1,9 @@
+gui-updater (0.5) bookworm; urgency=medium
+
+  * Be more strict about PkTask vs PkClient, because trixie cares...
+
+ -- Simon Long <simon@raspberrypi.com>  Thu, 13 Mar 2025 14:07:16 +0000
+
 gui-updater (0.4) bookworm; urgency=medium
 
   * Update taskbar on completion
