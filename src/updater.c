@@ -178,7 +178,7 @@ static gboolean quit (GtkButton *button, gpointer data)
         if (wayland)
             system ("wfpanelctl updater check");
         else
-            system ("lxpanelctl command updater check");
+            system ("lxpanelctl-pi command updater check");
     }
 
     if (msg_dlg)

@@ -1,3 +1,9 @@
+gui-updater (1.0) trixie; urgency=medium
+
+  * Rebuild for trixie
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 02 Jun 2025 13:13:42 +0100
+
 gui-updater (0.6) bookworm; urgency=medium
 
   * Switch to meson build system
