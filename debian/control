@@ -9,6 +9,6 @@ Homepage: http://raspberrypi.com/
 
 Package: gui-updater
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, libgtk-3-0 (>= 3.24), packagekit
+Depends: ${misc:Depends}, ${shlibs:Depends}, packagekit
 Description: GTK graphical system updater
  Simple GTK program to install system updates
