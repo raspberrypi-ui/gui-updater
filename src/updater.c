@@ -199,7 +199,7 @@ static gboolean reboot (GtkButton *button, gpointer data)
         msg_dlg = NULL;
     }
 
-    system ("sync;reboot");
+    system ("/usr/bin/sync;/usr/sbin/reboot");
     return FALSE;
 }
 

@@ -1,3 +1,9 @@
+gui-updater (1.2) trixie; urgency=medium
+
+  * Use full path for reboot
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 13 Oct 2025 15:15:57 +0100
+
 gui-updater (1.1) trixie; urgency=medium
 
   * Fix dependencies
