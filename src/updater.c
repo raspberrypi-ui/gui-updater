@@ -342,7 +342,7 @@ static gboolean filter_fn (PkPackage *package, gpointer user_data)
 
 static gboolean filter_fn_x86 (PkPackage *package, gpointer user_data)
 {
-    if (strstr (pk_package_get_arch (package), "amd64")) return FALSE;
+    if (strstr (pk_package_get_arch (package), "i386")) return FALSE;
     return filter_fn (package, NULL);
 }
 
