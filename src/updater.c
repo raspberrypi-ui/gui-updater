@@ -331,19 +331,12 @@ static gboolean filter_fn (PkPackage *package, gpointer user_data)
         case PK_INFO_ENUM_IMPORTANT:
         case PK_INFO_ENUM_SECURITY:
         case PK_INFO_ENUM_BUGFIX:
-        case PK_INFO_ENUM_ENHANCEMENT:
-        case PK_INFO_ENUM_BLOCKED:      return TRUE;
+        case PK_INFO_ENUM_ENHANCEMENT:  return TRUE;
                                         break;
 
         default:                        return FALSE;
                                         break;
     }
-}
-
-static gboolean filter_fn_x86 (PkPackage *package, gpointer user_data)
-{
-    if (strstr (pk_package_get_arch (package), "i386")) return FALSE;
-    return filter_fn (package, NULL);
 }
 
 static void start_install (PkClient *client, GAsyncResult *res, gpointer data)
@@ -355,10 +348,7 @@ static void start_install (PkClient *client, GAsyncResult *res, gpointer data)
     if (!results) return;
 
     sack = pk_results_get_package_sack (results);
-    if (system ("raspi-config nonint is_pi"))
-        fsack = pk_package_sack_filter (sack, filter_fn_x86, data);
-    else
-        fsack = pk_package_sack_filter (sack, filter_fn, data);
+    fsack = pk_package_sack_filter (sack, filter_fn, data);
 
     if (pk_package_sack_get_size (fsack) > 0)
     {
