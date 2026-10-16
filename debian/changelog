@@ -1,3 +1,9 @@
+gui-updater (1.5) trixie; urgency=medium
+
+  * No architecture filter; don't update blocked packages
+
+ -- Simon Long <simon@raspberrypi.com>  Fri, 16 Oct 2026 16:18:23 +0100
+
 gui-updater (1.4) trixie; urgency=medium
 
   * Fix for amd64
