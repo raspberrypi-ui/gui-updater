@@ -1,3 +1,9 @@
+gui-updater (1.6) trixie; urgency=medium
+
+  * Remove ntpd; update polkit
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 16 Nov 2026 09:48:16 +0000
+
 gui-updater (1.5) trixie; urgency=medium
 
   * No architecture filter; don't update blocked packages
