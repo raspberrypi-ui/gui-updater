@@ -1,3 +1,9 @@
+gui-updater (0.6+sec1) bookworm; urgency=medium
+
+  * Polkit fix from trixie
+
+ -- Simon Long <simon@raspberrypi.com>  Wed, 18 Nov 2026 09:02:45 +0000
+
 gui-updater (0.6) bookworm; urgency=medium
 
   * Switch to meson build system
